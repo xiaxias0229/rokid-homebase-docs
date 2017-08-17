@@ -21,5 +21,12 @@
 - `humidifier`: 加湿器
 - `door`: 门锁
 - `floorHeater`: 地暖
+- `refrigerator`: 冰箱
+- `waterHeater`: 热水器
+- `lampblackMachine`: 油烟机
+- `washingMachine`: 洗衣机
+- `gasStove`: 煤气灶
+- `heatingFurnace`: 采暖炉
+- `wineCabinet`: 酒柜
 
 > 如果上面类型无法满足需求， 需要添加新的设备类型， 请向我们 [提交 Issues](https://github.com/Rokid/rokid-homebase-docs/issues)

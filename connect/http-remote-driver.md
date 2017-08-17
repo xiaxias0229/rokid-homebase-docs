@@ -226,7 +226,7 @@ request sample
 }
 ```
 
-request sample
+response sample
 
 ```json
 

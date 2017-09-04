@@ -160,7 +160,7 @@ Example:
 
 Example:
 ```JSON
-{ "property": "position", "name":"num", value: 10}
+{ "property": "position", "name":"num", "value": 10}
 ```
 
 ### <span id = "fanspeed">风速 fanspeed</span>
@@ -185,7 +185,7 @@ Example:
 
 Example:
 ```JSON
-{ "property": "fanspeed", "name":"num", value: 10}
+{ "property": "fanspeed", "name":"num", "value": 10}
 ```
 
 ### <span id = "swing_mode">转向模式 swing_mode</span>
@@ -212,7 +212,7 @@ Example:
 Example:
 ```JSON
 { "swing_mode": "auto" }
-{ "property": "position", "name":"num", value: 10}
+{ "property": "position", "name":"num", "value": 10}
 ```
 
 ### <span id = "volume">音量 volume</span>
@@ -236,7 +236,7 @@ Example:
 
 Example:
 ```JSON
-{ "property": "volume", "name":"num", value: 100}
+{ "property": "volume", "name":"num", "value": 100}
 ```
 
 ### <span id = "channel">频道 channel</span>
@@ -259,7 +259,7 @@ Example:
 
 Example:
 ```JSON
-{ "property": "channel", "name":"num", value: 34}
+{ "property": "channel", "name":"num", "value": 34}
 ```
 
 ### <span id = "humidity">湿度 humidity</span>
@@ -283,7 +283,7 @@ Example:
 
 Example:
 ```JSON
-{ "property": "humidity", "name":"num", value: 100}
+{ "property": "humidity", "name":"num", "value": 100}
 ```
 
 ### <span id = "temperature">温度 temperature</span>
@@ -307,7 +307,7 @@ Example:
 
 Example:
 ```JSON
-{ "property": "temperature", "name":"num", value: 26}
+{ "property": "temperature", "name":"num", "value": 26}
 ```
 
 ### <span id = "ping">ping</span>

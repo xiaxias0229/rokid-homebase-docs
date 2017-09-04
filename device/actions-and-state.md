@@ -62,7 +62,7 @@ Example:
 
 Example:
 ```JSON
-{ "switch":"on" }
+{ "property": "switch", "name":"on" }
 ```
 
 ### <span id = "color">颜色 color</span>
@@ -85,7 +85,7 @@ Example:
 
 Example:
 ```JSON
-{ "color": 65280 }
+{ "property": "color", "name":"num", "value": 65280 }
 ```
 
 ### <span id = "brightness">亮度 brightness</span>
@@ -110,7 +110,7 @@ Example:
 
 Example:
 ```JSON
-{ "brightness": 68 }
+{ "property": "brightness", "name":"num", "value": 68 }
 ```
 
 ### <span id = "mode">模式 mode</span>
@@ -138,10 +138,10 @@ Example:
 
 Example:
 ```JSON
-{ "mode": "auto" }
+{ "property": "mode", "name":"auto"}
 ```
 
-### <span id = "position">位置量 position</span>
+### <del><span id = "position">位置量 position</span></del>  暂时不支持
 
 - actions 接受值 [ "up","down","num" ]
   - "up": 如：窗帘打开一点
@@ -150,7 +150,7 @@ Example:
 
 Example:
 ```JSON
-{ "position": "num" }
+{ "position": ["num"] }
 ```
 
 - state 值
@@ -160,7 +160,7 @@ Example:
 
 Example:
 ```JSON
-{ "position": 10 }
+{ "property": "position", "name":"num", value: 10}
 ```
 
 ### <span id = "fanspeed">风速 fanspeed</span>
@@ -185,7 +185,7 @@ Example:
 
 Example:
 ```JSON
-{ "fanspeed": 10 }
+{ "property": "fanspeed", "name":"num", value: 10}
 ```
 
 ### <span id = "swing_mode">转向模式 swing_mode</span>
@@ -212,6 +212,7 @@ Example:
 Example:
 ```JSON
 { "swing_mode": "auto" }
+{ "property": "position", "name":"num", value: 10}
 ```
 
 ### <span id = "volume">音量 volume</span>
@@ -235,7 +236,7 @@ Example:
 
 Example:
 ```JSON
-{ "volume": 10 }
+{ "property": "volume", "name":"num", value: 100}
 ```
 
 ### <span id = "channel">频道 channel</span>
@@ -248,7 +249,7 @@ Example:
 
 Example:
 ```JSON
-{ "channel": ["next", "prev"] }
+{ "channel": ["num"] }
 ```
 
 - state 值
@@ -258,7 +259,7 @@ Example:
 
 Example:
 ```JSON
-{ "channel": 10 }
+{ "property": "channel", "name":"num", value: 34}
 ```
 
 ### <span id = "humidity">湿度 humidity</span>
@@ -282,7 +283,7 @@ Example:
 
 Example:
 ```JSON
-{ "humidity": 30 }
+{ "property": "humidity", "name":"num", value: 100}
 ```
 
 ### <span id = "temperature">温度 temperature</span>
@@ -306,7 +307,7 @@ Example:
 
 Example:
 ```JSON
-{ "temperature": 26 }
+{ "property": "temperature", "name":"num", value: 26}
 ```
 
 ### <span id = "ping">ping</span>
@@ -319,7 +320,7 @@ Example:
 
 Example:
 ```JSON
-{ "ping": "trigger" }
+{ "property": "ping", "name":"trigger"}
 ```
 
 - state 值

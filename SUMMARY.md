@@ -14,6 +14,5 @@
   * [设备能力与状态](device/actions-and-state.md)
 * [调试工具](tools/README.md)
   * [命令行接口校验工具](tools/rhome.md)
-  * [智能家居开发面板](develop/developer-panel.md)
   * [开发者驱动](tools/developer-driver.md)
 * [添加驱动到 Rokid](add-to-rokid.md)

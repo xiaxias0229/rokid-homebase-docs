@@ -293,20 +293,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../develop/developer-panel.html">
-            
-                <a href="../develop/developer-panel.html">
-            
-                    
-                    智能家居开发面板
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../tools/developer-driver.html">
+        <li class="chapter " data-level="1.4.2" data-path="../tools/developer-driver.html">
             
                 <a href="../tools/developer-driver.html">
             
@@ -441,7 +428,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;switch&quot;</span>:<span class="hljs-string">&quot;on&quot;</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;switch&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;on&quot;</span> }
 </code></pre>
 <h3 id="&#x989C;&#x8272;-color"><span id="color">&#x989C;&#x8272; color</span></h3>
 <ul>
@@ -465,7 +452,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-number">65280</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;color&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">65280</span> }
 </code></pre>
 <h3 id="&#x4EAE;&#x5EA6;-brightness"><span id="brightness">&#x4EAE;&#x5EA6; brightness</span></h3>
 <ul>
@@ -491,7 +478,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;brightness&quot;</span>: <span class="hljs-number">68</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;brightness&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">68</span> }
 </code></pre>
 <h3 id="&#x6A21;&#x5F0F;-mode"><span id="mode">&#x6A21;&#x5F0F; mode</span></h3>
 <ul>
@@ -520,9 +507,9 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;mode&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;auto&quot;</span>}
 </code></pre>
-<h3 id="&#x4F4D;&#x7F6E;&#x91CF;-position"><span id="position">&#x4F4D;&#x7F6E;&#x91CF; position</span></h3>
+<h3 id="&#x4F4D;&#x7F6E;&#x91CF;-position--&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;"><del><span id="position">&#x4F4D;&#x7F6E;&#x91CF; position</span></del>  &#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</h3>
 <ul>
 <li>actions &#x63A5;&#x53D7;&#x503C; [ &quot;up&quot;,&quot;down&quot;,&quot;num&quot; ]<ul>
 <li>&quot;up&quot;: &#x5982;&#xFF1A;&#x7A97;&#x5E18;&#x6253;&#x5F00;&#x4E00;&#x70B9;</li>
@@ -532,7 +519,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;position&quot;</span>: <span class="hljs-string">&quot;num&quot;</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;position&quot;</span>: [<span class="hljs-string">&quot;num&quot;</span>] }
 </code></pre>
 <ul>
 <li>state &#x503C;<ul>
@@ -543,7 +530,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;position&quot;</span>: <span class="hljs-number">10</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;position&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>}
 </code></pre>
 <h3 id="&#x98CE;&#x901F;-fanspeed"><span id="fanspeed">&#x98CE;&#x901F; fanspeed</span></h3>
 <ul>
@@ -569,7 +556,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;fanspeed&quot;</span>: <span class="hljs-number">10</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;fanspeed&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>}
 </code></pre>
 <h3 id="&#x8F6C;&#x5411;&#x6A21;&#x5F0F;-swingmode"><span id="swing_mode">&#x8F6C;&#x5411;&#x6A21;&#x5F0F; swing_mode</span></h3>
 <ul>
@@ -597,6 +584,7 @@
 </ul>
 <p>Example:</p>
 <pre><code class="lang-JSON">{ <span class="hljs-string">&quot;swing_mode&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span> }
+{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;position&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>}
 </code></pre>
 <h3 id="&#x97F3;&#x91CF;-volume"><span id="volume">&#x97F3;&#x91CF; volume</span></h3>
 <ul>
@@ -621,7 +609,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;volume&quot;</span>: <span class="hljs-number">10</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;volume&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">100</span>}
 </code></pre>
 <h3 id="&#x9891;&#x9053;-channel"><span id="channel">&#x9891;&#x9053; channel</span></h3>
 <ul>
@@ -634,7 +622,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;channel&quot;</span>: [<span class="hljs-string">&quot;next&quot;</span>, <span class="hljs-string">&quot;prev&quot;</span>] }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;channel&quot;</span>: [<span class="hljs-string">&quot;num&quot;</span>] }
 </code></pre>
 <ul>
 <li>state &#x503C;<ul>
@@ -645,7 +633,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;channel&quot;</span>: <span class="hljs-number">10</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;channel&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">34</span>}
 </code></pre>
 <h3 id="&#x6E7F;&#x5EA6;-humidity"><span id="humidity">&#x6E7F;&#x5EA6; humidity</span></h3>
 <ul>
@@ -670,7 +658,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;humidity&quot;</span>: <span class="hljs-number">30</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;humidity&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">100</span>}
 </code></pre>
 <h3 id="&#x6E29;&#x5EA6;-temperature"><span id="temperature">&#x6E29;&#x5EA6; temperature</span></h3>
 <ul>
@@ -695,7 +683,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;temperature&quot;</span>: <span class="hljs-number">26</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;temperature&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">26</span>}
 </code></pre>
 <h3 id="ping"><span id="ping">ping</span></h3>
 <ul>
@@ -708,7 +696,7 @@
 </li>
 </ul>
 <p>Example:</p>
-<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;ping&quot;</span>: <span class="hljs-string">&quot;trigger&quot;</span> }
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;ping&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;trigger&quot;</span>}
 </code></pre>
 <ul>
 <li>state &#x503C;<ul>
@@ -760,7 +748,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设备能力与状态","level":"1.3.3","depth":2,"next":{"title":"调试工具","level":"1.4","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"命令行接口校验工具","level":"1.4.1","depth":2,"path":"tools/rhome.md","ref":"tools/rhome.md","articles":[]},{"title":"智能家居开发面板","level":"1.4.2","depth":2,"path":"develop/developer-panel.md","ref":"develop/developer-panel.md","articles":[]},{"title":"开发者驱动","level":"1.4.3","depth":2,"path":"tools/developer-driver.md","ref":"tools/developer-driver.md","articles":[]}]},"previous":{"title":"设备类型","level":"1.3.2","depth":2,"path":"device/type.md","ref":"device/type.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"device/actions-and-state.md","mtime":"2017-04-13T06:47:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-22T09:05:41.010Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设备能力与状态","level":"1.3.3","depth":2,"next":{"title":"调试工具","level":"1.4","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"命令行接口校验工具","level":"1.4.1","depth":2,"path":"tools/rhome.md","ref":"tools/rhome.md","articles":[]},{"title":"开发者驱动","level":"1.4.2","depth":2,"path":"tools/developer-driver.md","ref":"tools/developer-driver.md","articles":[]}]},"previous":{"title":"设备类型","level":"1.3.2","depth":2,"path":"device/type.md","ref":"device/type.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"device/actions-and-state.md","mtime":"2017-09-26T08:31:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-07T02:17:38.125Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

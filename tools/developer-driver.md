@@ -17,8 +17,7 @@ http remote driver 开发者工具
 ### 开发者使用说明
 
 - 首先开发者要启动 http remote driver
-- 打开 `Rokid app` ，进入 **智能家居**
-- 点击右上角 **+** 号，进入 **新增智能设备** 页面后滑到最底部，点击下面空白处。
+- 可以发邮件到 Smart Home Connect](mailto:smarthomeconnect@rokid.com) 或者加入QQ群 657149188 申请成为 智能家居开发者。
 
 ![](../images/developer_3.jpg)
 

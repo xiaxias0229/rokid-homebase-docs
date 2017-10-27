@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Android Native Driver · GitBook</title>
+        <title>Homebase OAuth2.0 授权 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="errors.html" />
+    <link rel="next" href="ssdp-auto-discovery.html" />
     
     
-    <link rel="prev" href="json-rpc-over-tcp.html" />
+    <link rel="prev" href="oauth.html" />
     
 
     </head>
@@ -151,7 +151,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="oauth2.0.html">
+        <li class="chapter active" data-level="1.2.3" data-path="oauth2.0.html">
             
                 <a href="oauth2.0.html">
             
@@ -190,7 +190,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.6" data-path="android-native-driver.html">
+        <li class="chapter " data-level="1.2.6" data-path="android-native-driver.html">
             
                 <a href="android-native-driver.html">
             
@@ -367,7 +367,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Android Native Driver</a>
+        <a href=".." >Homebase OAuth2.0 授权</a>
     </h1>
 </div>
 
@@ -382,22 +382,191 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="android-native-driver">Android Native Driver</h1>
-<p>Native Driver &#x4E3B;&#x8981;&#x662F;&#x9488;&#x5BF9; <strong>&#x4F7F;&#x7528; Android SDK &#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5382;&#x5546;</strong> &#x65B9;&#x5F0F;&#x6765;&#x5BF9;&#x63A5;,  &#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4F7F;&#x7528; http &#x8FDC;&#x7A0B;&#x9A71;&#x52A8; + OAuth &#x6388;&#x6743;&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x63A5;&#xFF0C;&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x7EC4;&#x5408;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C; &#x53EF;&#x4EE5;&#x8054;&#x7CFB;&#x6211;&#x4EEC;&#x7533;&#x8BF7;&#x57FA;&#x4E8E; Android Native Driver &#x5F00;&#x53D1;SDK&#xFF0C;&#x90AE;&#x7BB1; <a href="mailto:smarthomeconnect@rokid.com" target="_blank">Smart Home Connect</a>&#x3002;</p>
-<p>Native Driver &#x9A71;&#x52A8;&#x5728;&#x5185;&#x90E8;&#x901A;&#x8FC7;&#x5B9E;&#x73B0; <a href="http-remote-driver.html">HTTP Driver</a> &#x5B9E;&#x73B0; &#x83B7;&#x53D6;/&#x63A7;&#x5236; &#x8BBE;&#x5907;&#x3002;</p>
-<p>&#x672C;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x7528;&#x9488;&#x5BF9;&#x7B2C;&#x4E09;&#x65B9;&#x5F00;&#x53D1;&#x8005;&#x5F00;&#x53D1;&#x53EF;&#x8FD0;&#x884C;&#x5728;Rokid&#x8BBE;&#x5907;&#x4E0A;&#x63D0;&#x4F9B;&#x667A;&#x80FD;&#x5BB6;&#x5C45;&#x670D;&#x52A1;&#x3002;</p>
-<p>&#x667A;&#x80FD;&#x5BB6;&#x5C45; &#x901A;&#x8BAF; &#x4EA4;&#x4E92;&#x56FE;</p>
-<div align="center">
-    <img src="../images/android_driver.jpeg" width="30%" height="30%">
-</div>
-
-<ol>
-<li>Driver &#x901A;&#x8FC7; Url &#x8BF7;&#x6C42; Core &#x83B7;&#x53D6;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</li>
-<li>Core   &#x8FD4;&#x56DE;&#x7AEF;&#x53E3;&#x53F7;&#x7ED9; Driver, &#x540E;&#x7EED;&#x901A;&#x8FC7;&#x8BE5;&#x7AEF;&#x53E3;&#x901A;&#x8BAF;&#x3002;</li>
-<li>Core   &#x53D1;&#x9001; &#x767B;&#x5F55;&#x6388;&#x6743;/&#x83B7;&#x53D6;&#x8BBE;&#x5907;/&#x63A7;&#x5236;&#x8BF7;&#x6C42;&#x3002;</li>
-<li>Driver &#x8FD4;&#x56DE; &#x767B;&#x5F55;&#x7ED3;&#x679C;/&#x8BBE;&#x5907;&#x5217;&#x8868;/&#x63A7;&#x5236;&#x7ED3;&#x679C;&#x3002;</li>
-</ol>
-
+                                <h1 id="http-&#x8FDC;&#x7A0B;&#x9A71;&#x52A8;-oauth-20-&#x63A5;&#x5165;">HTTP &#x8FDC;&#x7A0B;&#x9A71;&#x52A8; OAuth 2.0 &#x63A5;&#x5165;</h1>
+<p>&#x57FA;&#x672C;&#x6D41;&#x7A0B;&#x4E0E; <a href="oauth.html">OAuth</a> &#x7C7B;&#x8BD5;;</p>
+<p>OAuth 2.0 &#x9700;&#x8981;&#x5B9E;&#x73B0; 3 &#x4E2A; command &#x63A5;&#x53E3;</p>
+<h2 id="&#x63A5;&#x53E3;1-oauth">&#x63A5;&#x53E3;1. <code>OAuth</code></h2>
+<p>&#x8F93;&#x5165;&#x53C2;&#x6570;</p>
+<ul>
+<li>command {String} &#x65B9;&#x6CD5;&#x540D;</li>
+<li>params</li>
+<li>params.callbackURL {String} &#x6388;&#x6743;&#x56DE;&#x8C03; URL</li>
+</ul>
+<p>&#x8F93;&#x51FA;</p>
+<ul>
+<li>status {Number} 0 &#x8868;&#x793A;&#x6210;&#x529F;</li>
+<li>data {String} &#x6388;&#x6743;&#x8DF3;&#x8F6C; URL</li>
+</ul>
+<p>Sample</p>
+<pre><code>{
+  &quot;command&quot;: &quot;OAuth&quot;,
+  &quot;params&quot;: {
+    &quot;callbackURL&quot;: &quot;http://s.rokidcdn.com/xxxxxx&quot;
+  }
+}
+</code></pre><p>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;JSON&#x683C;&#x5F0F;</p>
+<pre><code>{
+  &quot;status&quot;: 0,
+  &quot;data&quot;: &quot;http://my.driver.com/xxx?callbackurl=http%3A%2F%2Fs.rokidcdn.com%2Fxxxxxx&quot;
+}
+</code></pre><h2 id="&#x63A5;&#x53E3;2-oauthgettoken">&#x63A5;&#x53E3;2: OAuthGetToken</h2>
+<p>&#x8F93;&#x5165;</p>
+<ul>
+<li>command {String} &#x65B9;&#x6CD5;&#x540D;</li>
+<li>params.code {String}</li>
+</ul>
+<p>&#x8F93;&#x51FA;</p>
+<ul>
+<li><ul>
+<li>status {Number} &#x63A5;&#x53E3;&#x72B6;&#x6001;</li>
+</ul>
+</li>
+<li><ul>
+<li>data {Object}</li>
+</ul>
+</li>
+<li><ul>
+<li>data.userId &#x6388;&#x6743;&#x7528;&#x6237;ID</li>
+</ul>
+</li>
+<li><ul>
+<li>data.userToken &#x6388;&#x6743;token</li>
+</ul>
+</li>
+<li><ul>
+<li>data.refreshToken &#x5237;&#x65B0;&#x7528;&#x7684;token</li>
+</ul>
+</li>
+<li><ul>
+<li>data.expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext1 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext2 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext3 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext4 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext5 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+</ul>
+<p>Sample</p>
+<pre><code>{
+  &quot;command&quot;: &quot;OAuth&quot;,
+  &quot;params&quot;: {
+    &quot;code&quot;: &quot;XXXXXXXXXX&quot;
+  }
+}
+</code></pre><p>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;JSON&#x683C;&#x5F0F;</p>
+<ul>
+<li>data { JSON }</li>
+</ul>
+<pre><code>{
+  &quot;status&quot;: 0,
+  &quot;data&quot;: {
+    &quot;userId&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;userToken&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;refreshToken&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;expiredTime: 1503393264
+  }
+}
+</code></pre><h2 id="&#x63A5;&#x53E3;3-oauthrefresh">&#x63A5;&#x53E3;3: <code>OAuthRefresh</code></h2>
+<p>&#x8F93;&#x5165; userAuth</p>
+<ul>
+<li>params.code {String} &#x6388;&#x6743; code</li>
+<li>data {Object}</li>
+<li>userId &#x6388;&#x6743;&#x7528;&#x6237;ID</li>
+<li>userToken &#x6388;&#x6743;token</li>
+<li>refreshToken &#x5237;&#x65B0;&#x7528;&#x7684;token</li>
+<li>expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;</li>
+<li>ext1 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+<li>ext2 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+<li>ext3 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+<li>ext4 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+<li>ext5 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+<p>&#x8F93;&#x51FA; userAuth</p>
+<ul>
+<li><ul>
+<li>status {Number} &#x63A5;&#x53E3;&#x72B6;&#x6001;</li>
+</ul>
+</li>
+<li><ul>
+<li>data {Object}</li>
+</ul>
+</li>
+<li><ul>
+<li>data.userId &#x6388;&#x6743;&#x7528;&#x6237;ID</li>
+</ul>
+</li>
+<li><ul>
+<li>data.userToken &#x6388;&#x6743;token</li>
+</ul>
+</li>
+<li><ul>
+<li>data.refreshToken &#x5237;&#x65B0;&#x7528;&#x7684;token</li>
+</ul>
+</li>
+<li><ul>
+<li>data.expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext1 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext2 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext3 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext4 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><ul>
+<li>data.ext5 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+</ul>
+<p>&#x4F20;&#x5165;&#x53C2;&#x6570;</p>
+<pre><code>{
+  &quot;command&quot;: &quot;OAuthRefresh&quot;,
+  &quot;params&quot;: {
+    &quot;userId&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;userToken&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;refreshToken&quot;: &quot;XXXXXXXXXX&quot;
+  }
+}
+</code></pre><p>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;JSON&#x683C;&#x5F0F;</p>
+<ul>
+<li>data { JSON }</li>
+</ul>
+<pre><code>{
+  &quot;status&quot;: 0,
+  &quot;data&quot;: {
+    &quot;userId&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;userToken&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;refreshToken&quot;: &quot;XXXXXXXXXX&quot;,
+    &quot;expiredTime: 1503393264
+  }
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -424,12 +593,12 @@
 
             
                 
-                <a href="json-rpc-over-tcp.html" class="navigation navigation-prev " aria-label="Previous page: JSON-RPC over TCP">
+                <a href="oauth.html" class="navigation navigation-prev " aria-label="Previous page: Homebase OAuth 授权">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="errors.html" class="navigation navigation-next " aria-label="Next page: 标准错误">
+                <a href="ssdp-auto-discovery.html" class="navigation navigation-next " aria-label="Next page: SSDP Auto Discovery">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -440,7 +609,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android Native Driver","level":"1.2.6","depth":2,"next":{"title":"标准错误","level":"1.2.7","depth":2,"path":"connect/errors.md","ref":"connect/errors.md","articles":[]},"previous":{"title":"JSON-RPC over TCP","level":"1.2.5","depth":2,"path":"connect/json-rpc-over-tcp.md","ref":"connect/json-rpc-over-tcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"connect/android-native-driver.md","mtime":"2017-05-01T02:22:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-27T02:01:40.731Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Homebase OAuth2.0 授权","level":"1.2.3","depth":2,"next":{"title":"SSDP Auto Discovery","level":"1.2.4","depth":2,"path":"connect/ssdp-auto-discovery.md","ref":"connect/ssdp-auto-discovery.md","articles":[]},"previous":{"title":"Homebase OAuth 授权","level":"1.2.2","depth":2,"path":"connect/oauth.md","ref":"connect/oauth.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"connect/oauth2.0.md","mtime":"2017-10-27T02:01:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-27T02:01:40.731Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

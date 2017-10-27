@@ -1,6 +1,10 @@
-## OAuth 2.0 需要实现 3 个接口
+# HTTP 远程驱动 OAuth 2.0 接入
 
-### 接口1. `OAuth`
+基本流程与 [OAuth](./oauth.md) 类试;
+
+OAuth 2.0 需要实现 3 个 command 接口
+
+## 接口1. `OAuth`
 
 输入参数
  * command {String} 方法名
@@ -13,7 +17,7 @@
 * data {String} 授权跳转 URL
 
 
-Exsample
+Sample
 ```
 {
   "command": "OAuth",
@@ -32,7 +36,7 @@ Exsample
 ```
 
 
-### 接口2: OAuthGetToken
+## 接口2: OAuthGetToken
 
 输入
 
@@ -53,7 +57,7 @@ Exsample
 * - data.ext4 {String} 扩展字段
 * - data.ext5 {String} 扩展字段
 
-Example
+Sample
 ```
 {
   "command": "OAuth",
@@ -79,7 +83,7 @@ Example
 ```
 
 
-### 接口3: `OAuthRefresh`
+## 接口3: `OAuthRefresh`
 
 输入 userAuth
 

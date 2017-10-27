@@ -9,6 +9,7 @@
 - {Object} [state](#state)
 - {Boolean} [offline](#offline)
 - {Object} [deviceInfo](#deviceInfo) (Optional)
+- {Object} [execDelay](#execDelay) (Optional)
 - {String} [parent](#parent) (Optional)
 
 **标准化设备** 数据定义参考： [jsonschemalint 在线检查工具](https://jsonschemalint.com/#/version/draft-04/markup/json?gist=f9b8fcb4b8e9e2761978fb9cbde48392)
@@ -102,6 +103,23 @@ Example:
 {
   "hostname":"http://127.0.0.1",
   "port":"3000"
+}
+```
+
+### <span id = "execDelay">execDelay</span>
+
+- {Number} Option 该设备控制指令发出后与下一个控制指令的延迟， 默认 150ms
+
+Example:
+```JSON
+{
+  "name": "电视",
+  "deviceId": "123",
+  "type": "tv",
+  "actions": {
+    "switch": ["on", "off"]
+  },
+  "execDelay": 1000,
 }
 ```
 

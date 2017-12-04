@@ -125,7 +125,7 @@ get 接口返回一个 [Device][device]
      "state": {
        "switch": "on"
      },
-     "userAUth": {
+     "userAuth": {
        "userId": "",
        "userToken": ""
      }
@@ -169,7 +169,7 @@ request
      "state": {
         "switch": "on"
      },
-     "userAUth": {
+     "userAuth": {
         "userId": "",
         "userToken": ""
      }

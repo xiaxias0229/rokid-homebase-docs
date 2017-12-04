@@ -41,6 +41,7 @@ state:
 - 频道 [channel](#channel)
 - 湿度 [humidity](#humidity)
 - 温度 [temperature](#temperature)
+- 媒体播放控制 [playback](#playback) 未上线
 - Ping [ping](#ping)
 
 ### <span id = "switch">开关 switch</span>
@@ -313,10 +314,8 @@ Example:
 ### <span id = "ping">ping</span>
 
 - actions 接受值 [ "trigger" ]
-  - ping 是设备提示的功能。
-  - 比如，智慧灯泡闪一下（打开关闭或者关闭打开，或者换颜色，改亮度），用来发现。
-  - 如果设备没有该能力，又支持开关，那么默认开关一下，用以提示。
-  - trigger 触发
+  - ping 是设备提示的功能。比如，智慧灯泡闪一下（打开关闭或者关闭打开，或者换颜色，改亮度），用来发现。如果设备没有该能力，又支持开关，那么默认开关一下，用以提示。
+    - trigger 触发
 
 Example:
 ```JSON
@@ -324,5 +323,22 @@ Example:
 ```
 
 - state 值
-  - {Boolean}
   - 为空，不需要提供state
+
+
+### <span id = "playback">playback</span> 媒体播放控制， 草稿未上线
+
+- actions
+ - play
+ - pause
+ - stop
+ - next
+ - previous
+
+Example:
+
+```JSON
+{ "property": "playback", "name":"play"}
+```
+
+- state 值

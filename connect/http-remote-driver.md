@@ -9,8 +9,7 @@ HTTP 远程驱动是接入 Homebase 推荐的方式， 本地 Android Native Dri
 
 - `/command` 用户处理一些用户授权，绑定，安装相关的命令
 - `/list` 获取设备列表
-- `/get` 获取设备详情
-- `/execute` 控制设备
+- `/execute` 在设备上执行动作
 
 
 ## 通用格式
@@ -90,61 +89,6 @@ HTTP 远程驱动使用 JSON 作为数据交换格式， 执行成功会返回�
     ]
 }
 ```
-
-### `POST /get` 获取单个设备状态
-
-获取单个设备最新状态和信息
-
-**参数**
-
-- deviceId  {String} 厂商设备ID， 可以包含不可变数据， 与厂商ID一起，可以唯一确认一台设备
-- userAuth {Object} 设备关联的用户授权信息
-
-```json
-{
-  "device" : {
-    "deviceId": "xxx",
-    "userAuth": {
-      "userId": "",
-      "userToken": ""
-    }
-  }
-}
-```
-
-**返回**
-
-get 接口返回一个 [Device][device]
-
-```json
-
-{
-  "status": 0,
-  "data": {
-     "deviceId": "xxx",
-     "state": {
-       "switch": "on"
-     },
-     "userAuth": {
-       "userId": "",
-       "userToken": ""
-     }
-  }
-}
-
-```
-
-**返回值**
-
-Object 设备最新状态对象：
-
-- `name` 设备名称
-- `actions` 设备支持的 action
-- `state` 设备运行状态
-
-**注意事项**
-
-- 有些设备如果无法返回状态，返回一个空的对象
 
 
 ### `POST /execute` 执行操作指令， 并返回可确定的最新状态
@@ -321,7 +265,7 @@ params:
 ```json
 {
     "username": "superman",
-    "password": "fjfjfjfjfjfj"
+    "password": "superman_password"
 }
 ```
 

@@ -324,7 +324,7 @@
                 <a href="../tools/oauth-test.html">
             
                     
-                    测试OAuth接口
+                    测试 OAuth|OAuth2.0 接口
             
                 </a>
             
@@ -401,8 +401,8 @@
 <h2 id="&#x63A5;&#x53E3;1-oauth">&#x63A5;&#x53E3;1. <code>OAuth</code></h2>
 <p>&#x8F93;&#x5165;&#x53C2;&#x6570;</p>
 <ul>
-<li>command {String} &#x65B9;&#x6CD5;&#x540D;</li>
-<li>params</li>
+<li>command {String} &#x65B9;&#x6CD5;&#x540D;, <code>OAuth</code></li>
+<li>params {Object}</li>
 <li>params.callbackURL {String} &#x6388;&#x6743;&#x56DE;&#x8C03; URL</li>
 </ul>
 <p>&#x8F93;&#x51FA;</p>
@@ -422,58 +422,27 @@
   &quot;status&quot;: 0,
   &quot;data&quot;: &quot;http://my.driver.com/xxx?callbackurl=http%3A%2F%2Fs.rokidcdn.com%2Fxxxxxx&quot;
 }
-</code></pre><h2 id="&#x63A5;&#x53E3;2-oauthgettoken">&#x63A5;&#x53E3;2: OAuthGetToken</h2>
+</code></pre><h2 id="&#x63A5;&#x53E3;2-oauthgettoken">&#x63A5;&#x53E3;2: <code>OAuthGetToken</code></h2>
 <p>&#x8F93;&#x5165;</p>
 <ul>
-<li>command {String} &#x65B9;&#x6CD5;&#x540D;</li>
+<li>command {String} &#x65B9;&#x6CD5;&#x540D; expiredTime</li>
+<li>params {Object}</li>
 <li>params.code {String}</li>
 </ul>
 <p>&#x8F93;&#x51FA;</p>
 <ul>
-<li><ul>
 <li>status {Number} &#x63A5;&#x53E3;&#x72B6;&#x6001;</li>
-</ul>
-</li>
-<li><ul>
 <li>data {Object}</li>
-</ul>
-</li>
-<li><ul>
 <li>data.userId &#x6388;&#x6743;&#x7528;&#x6237;ID</li>
-</ul>
-</li>
-<li><ul>
 <li>data.userToken &#x6388;&#x6743;token</li>
-</ul>
-</li>
-<li><ul>
 <li>data.refreshToken &#x5237;&#x65B0;&#x7528;&#x7684;token</li>
-</ul>
-</li>
-<li><ul>
-<li>data.expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;</li>
-</ul>
-</li>
-<li><ul>
+<li>expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;, &#x4E0E; expiresIn &#x4E8C;&#x9009;&#x4E00;</li>
+<li>expiresIn {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;, &#x4E0E; expiredTime &#x4E8C;&#x9009;&#x4E00;</li>
 <li>data.ext1 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
-</ul>
-</li>
-<li><ul>
 <li>data.ext2 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
-</ul>
-</li>
-<li><ul>
 <li>data.ext3 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
-</ul>
-</li>
-<li><ul>
 <li>data.ext4 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
-</ul>
-</li>
-<li><ul>
 <li>data.ext5 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
-</ul>
-</li>
 </ul>
 <p>Sample</p>
 <pre><code>{
@@ -503,7 +472,8 @@
 <li>userId &#x6388;&#x6743;&#x7528;&#x6237;ID</li>
 <li>userToken &#x6388;&#x6743;token</li>
 <li>refreshToken &#x5237;&#x65B0;&#x7528;&#x7684;token</li>
-<li>expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;</li>
+<li>expiredTime {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;, &#x4E0E; expiresIn &#x4E8C;&#x9009;&#x4E00;</li>
+<li>expiresIn {Number} &#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;, &#x4E0E; expiredTime &#x4E8C;&#x9009;&#x4E00;</li>
 <li>ext1 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
 <li>ext2 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
 <li>ext3 {String} &#x6269;&#x5C55;&#x5B57;&#x6BB5;</li>
@@ -622,7 +592,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Homebase OAuth2.0 授权","level":"1.2.3","depth":2,"next":{"title":"SSDP Auto Discovery","level":"1.2.4","depth":2,"path":"connect/ssdp-auto-discovery.md","ref":"connect/ssdp-auto-discovery.md","articles":[]},"previous":{"title":"Homebase OAuth 授权","level":"1.2.2","depth":2,"path":"connect/oauth.md","ref":"connect/oauth.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"connect/oauth2.0.md","mtime":"2017-10-27T02:01:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-12T06:54:53.941Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Homebase OAuth2.0 授权","level":"1.2.3","depth":2,"next":{"title":"SSDP Auto Discovery","level":"1.2.4","depth":2,"path":"connect/ssdp-auto-discovery.md","ref":"connect/ssdp-auto-discovery.md","articles":[]},"previous":{"title":"Homebase OAuth 授权","level":"1.2.2","depth":2,"path":"connect/oauth.md","ref":"connect/oauth.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"connect/oauth2.0.md","mtime":"2017-12-12T07:02:44.660Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-12T07:59:22.211Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

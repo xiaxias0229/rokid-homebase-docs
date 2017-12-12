@@ -16,5 +16,5 @@
 * [调试工具](tools/README.md)
   * [命令行接口校验工具](tools/rhome.md)
   * [开发者驱动](tools/developer-driver.md)
-  * [测试OAuth接口](tools/oauth-test.md)
+  * [测试 OAuth|OAuth2.0 接口](tools/oauth-test.md)
 * [添加驱动到 Rokid](add-to-rokid.md)

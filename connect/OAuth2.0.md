@@ -7,8 +7,9 @@ OAuth 2.0 需要实现 3 个 command 接口
 ## 接口1. `OAuth`
 
 输入参数
- * command {String} 方法名
- * params
+
+ * command {String} 方法名, `OAuth`
+ * params {Object}
  * params.callbackURL {String} 授权回调 URL
 
 输出
@@ -36,26 +37,28 @@ Sample
 ```
 
 
-## 接口2: OAuthGetToken
+## 接口2: `OAuthGetToken`
 
 输入
 
-* command {String} 方法名
+* command {String} 方法名 expiredTime
+* params {Object}
 * params.code {String}
 
 输出
 
-* - status {Number} 接口状态
-* - data {Object}
-* - data.userId 授权用户ID
-* - data.userToken 授权token
-* - data.refreshToken 刷新用的token
-* - data.expiredTime {Number} 时间戳，单位秒
-* - data.ext1 {String} 扩展字段
-* - data.ext2 {String} 扩展字段
-* - data.ext3 {String} 扩展字段
-* - data.ext4 {String} 扩展字段
-* - data.ext5 {String} 扩展字段
+* status {Number} 接口状态
+* data {Object}
+* data.userId 授权用户ID
+* data.userToken 授权token
+* data.refreshToken 刷新用的token
+* expiredTime {Number} 时间戳，单位秒, 与 expiresIn 二选一
+* expiresIn {Number} 时间戳，单位秒, 与 expiredTime 二选一
+* data.ext1 {String} 扩展字段
+* data.ext2 {String} 扩展字段
+* data.ext3 {String} 扩展字段
+* data.ext4 {String} 扩展字段
+* data.ext5 {String} 扩展字段
 
 Sample
 ```
@@ -92,7 +95,8 @@ Sample
 * userId 授权用户ID
 * userToken 授权token
 * refreshToken 刷新用的token
-* expiredTime {Number} 时间戳，单位秒
+* expiredTime {Number} 时间戳，单位秒, 与 expiresIn 二选一
+* expiresIn {Number} 时间戳，单位秒, 与 expiredTime 二选一
 * ext1 {String} 扩展字段
 * ext2 {String} 扩展字段
 * ext3 {String} 扩展字段

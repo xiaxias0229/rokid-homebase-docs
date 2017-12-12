@@ -1,21 +1,14 @@
 ## Auth 接口测试
 
-测试 OAuth|OAuth2.0 授权接口
+测试 OAuth|OAuth2.0 授权接口, 授权接口开发完毕后，并且已经部署到如下地址 `https://awesome-iot-brand.com/driver`, 现在我们就可以开始测试授权接口了。
 
-
-授权接口开发完毕，并且已经部署到如下地址
-
-https://sample-driver.rokid.com/driver
-
-现在我们就可以开始测试了。
-
-### 测试 获取 OAuth 授权接口地址
+### 测试1. 获取 OAuth 授权接口地址
 
 OAuth 接口
 
 ```bash
 POST /driver/command HTTP/1.1
-Host: sample-driver.rokid.com
+Host: awesome-iot-brand.com
 Content-Type: application/json
 Cache-Control: no-cache
 Postman-Token: 1d89f10f-b14d-e37e-fa9e-8deb3fce02e7
@@ -33,15 +26,19 @@ Postman-Token: 1d89f10f-b14d-e37e-fa9e-8deb3fce02e7
 ```
 {
     "status": 0,
-    "data": "http://sample-driver.rokid.com/oauth/authorize?callbackURL=https%3A%2F%2Fs.rokidcdn.com%2Fpath%3Fu%3D1%26v%3D2"
+    "data": "http://awesome-iot-brand.com/oauth/authorize?callbackURL=https%3A%2F%2Fs.rokidcdn.com%2Fpath%3Fu%3D1%26v%3D2"
 }
 ```
 
-### 测试授权逻辑
+### 测试2. 授权逻辑
 
-拿到结果的， 在浏览器打开， url `http://sample-driver.rokid.com/oauth/authorize?callbackURL=https%3A%2F%2Fs.rokidcdn.com%2Fpath%3Fu%3D1%26v%3D2`
+拿到结果的， 在浏览器打开， url `http://awesome-iot-brand.com/oauth/authorize?callbackURL=https%3A%2F%2Fs.rokidcdn.com%2Fpath%3Fu%3D1%26v%3D2`
 
-授权成功，会重定向到 `https://s.rokidcdn.com/path?u=1&v=2&userId=foo&userToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZvbyIsImlhdCI6MTUxMzA1MDM0OSwiZXhwIjoxNTEzMDUxNTQ5fQ.YlKZmgPzNwZCWYrhMjbtU7Q8n39STr_tTRU1rRu2Ngk&expiresIn=1200&expiredTime=1513051549543`
+授权成功后
+
+1. 如果是 OAuth 授权:  需要重定向到 callbackURL， 并带上userAuth信息： `https://s.rokidcdn.com/path?u=1&v=2&userId=foo&userToken=xxxx&expiresIn=1200`
+2. 如果是 **OAuth2.0** 授权:
+授权成功，会重定向到callbackURL, 并带上 code  `https://s.rokidcdn.com/path?u=1&v=2&code=abcd1234`
 
 检查项：
 
@@ -49,15 +46,15 @@ Postman-Token: 1d89f10f-b14d-e37e-fa9e-8deb3fce02e7
 2. OAuth 不同结果判断
   1. 如果是 OAuth2.0 需要 URL 返回 code 参数
   2. 如果 是 OAuth， 需要 URL 返回 userAuth 相关参数
-3. [OAuth2.0] 通过 code 调用 OAuthGetToken command接口
+3. [OAuth2.0] 通过 code 调用 OAuthGetToken command 接口
 
-### 『OAuth2.0』 检查通过 code 获取 userAuth
+### 测试3. 检查通过 code 获取 userAuth『OAuth2.0』
 
 通过 code 调用 `OAuthGetToken` command接口
 
 ```bash
 POST /driver/command HTTP/1.1
-Host: sample-driver.rokid.com
+Host: awesome-iot-brand.com
 Content-Type: application/json
 Cache-Control: no-cache
 
@@ -84,13 +81,13 @@ Cache-Control: no-cache
 ```
 
 
-### 检查 token 刷新
+### 测试4. 检查 token 刷新
 
-通过 code 调用 `OAuthGetToken` command接口
+调用 `OAuthRefreshToken` command接口, 完成token的刷新
 
 ```bash
 POST /driver/command HTTP/1.1
-Host: sample-driver.rokid.com
+Host: awesome-iot-brand.com
 Content-Type: application/json
 Cache-Control: no-cache
 

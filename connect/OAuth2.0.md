@@ -61,14 +61,16 @@ Sample
 * data.ext5 {String} 扩展字段
 
 Sample
+
 ```
 {
-  "command": "OAuth",
+  "command": "OAuthGetToken",
   "params": {
     "code": "XXXXXXXXXX"
   }
 }
 ```
+
 返回结果，JSON格式
 
 - data { JSON }

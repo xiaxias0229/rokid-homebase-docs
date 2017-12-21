@@ -82,7 +82,7 @@ Sample
     "userId": "XXXXXXXXXX",
     "userToken": "XXXXXXXXXX",
     "refreshToken": "XXXXXXXXXX",
-    "expiredTime: 1503393264
+    "expiresIn: 7200
   }
 }
 ```
@@ -142,7 +142,7 @@ Sample
     "userId": "XXXXXXXXXX",
     "userToken": "XXXXXXXXXX",
     "refreshToken": "XXXXXXXXXX",
-    "expiredTime: 1503393264
+    "expiresIn: 7200
   }
 }
 ```

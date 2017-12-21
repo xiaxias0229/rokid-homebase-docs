@@ -19,7 +19,8 @@
 
 - userId {可选}
 - userToken 新的用户Token
-- expiredTime 更新过期时间， 秒为单位， UTC 时间戳
+- expiredTime 更新过期时间， 秒为单位， UTC 时间戳, 与 expiresIn 选择一个即可
+- expiresIn Token 过期时间，相对现在的时间， 秒为单位, 与 expiredTime 选择一个即可
 - refreshToken  可选， 更新 refreshToken
 
 

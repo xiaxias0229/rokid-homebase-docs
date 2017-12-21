@@ -76,7 +76,7 @@ Cache-Control: no-cache
   "data":  {
     "userId": "xxx",
     "userToken": "yyyy",
-    "expiredIn": 3600,
+    "expiresIn": 3600,
     "refreshToken": 3600
   }
 }
@@ -98,7 +98,7 @@ Cache-Control: no-cache
   "params": {
     "userId": "xxx",
     "userToken": "yyyy",
-    "expiredIn": 3600,
+    "expiresIn": 3600,
     "refreshToken": 3600
   }
 }
@@ -112,7 +112,7 @@ Cache-Control: no-cache
   "data":  {
     "userId": "xxx",
     "userToken": "yyyy",
-    "expiredIn": 3600,
+    "expiresIn": 3600,
     "refreshToken": 3600
   }
 }

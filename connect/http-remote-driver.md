@@ -6,8 +6,7 @@ HTTP 远程驱动是接入 Homebase 推荐的方式， 本地 Android Native Dri
 
 开发一个 HTTP 远程驱动你可能需要以下 4个接口
 
-
-- `/command` 用户处理一些用户授权，绑定，安装相关的命令
+- `/command` 用于处理用户授权，绑定，初始化等命令
 - `/list` 获取设备列表
 - `/execute` 在设备上执行动作
 

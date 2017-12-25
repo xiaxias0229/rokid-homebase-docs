@@ -85,7 +85,7 @@ Cache-Control: no-cache
 
 ## 测试4. 检查 token 刷新
 
-调用 `OAuthRefreshToken` command接口, 完成token的刷新
+调用 `OAuthRefresh` command接口, 完成token的刷新
 
 ```bash
 POST /driver/command HTTP/1.1
@@ -94,7 +94,7 @@ Content-Type: application/json
 Cache-Control: no-cache
 
 {
-  "command": "OAuthRefreshToken",
+  "command": "OAuthRefresh",
   "params": {
     "userId": "xxx",
     "userToken": "yyyy",

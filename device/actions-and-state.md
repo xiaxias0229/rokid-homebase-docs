@@ -41,6 +41,7 @@ state:
 - 频道 [channel](#channel)
 - 湿度 [humidity](#humidity)
 - 温度 [temperature](#temperature)
+- 色温 [color_temperature](#color_temperature)
 - 媒体播放控制 [playback](#playback) 未上线
 - Ping [ping](#ping)
 
@@ -309,6 +310,30 @@ Example:
 Example:
 ```JSON
 { "property": "temperature", "name":"num", "value": 26}
+```
+
+### <span id = "color_temperature">色温 color_temperature</span>
+
+- actions 接受值 [ "up", "down", "max", "min", "num" ]
+  - "up": 调高
+  - "down": 调低
+  - "max": 调到最大
+  - "min": 调到最小
+  - "num": 调到指定数值
+
+Example:
+```JSON
+{ "color_temperature": ["up", "down"] }
+```
+
+- state 值
+  - {number}
+  - 0 到 100 之间十进制数值
+  - 如果不能明确获取到具体数值，可以为 null
+
+Example:
+```JSON
+{ "property": "color_temperature", "name":"num", "value": 26}
 ```
 
 ### <span id = "ping">ping</span>

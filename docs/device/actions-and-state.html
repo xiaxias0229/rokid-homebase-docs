@@ -431,6 +431,7 @@
 <li>&#x9891;&#x9053; <a href="#channel">channel</a></li>
 <li>&#x6E7F;&#x5EA6; <a href="#humidity">humidity</a></li>
 <li>&#x6E29;&#x5EA6; <a href="#temperature">temperature</a></li>
+<li>&#x8272;&#x6E29; <a href="#color_temperature">color_temperature</a></li>
 <li>&#x5A92;&#x4F53;&#x64AD;&#x653E;&#x63A7;&#x5236; <a href="#playback">playback</a> &#x672A;&#x4E0A;&#x7EBF;</li>
 <li>Ping <a href="#ping">ping</a></li>
 </ul>
@@ -712,6 +713,31 @@
 <p>Example:</p>
 <pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;temperature&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">26</span>}
 </code></pre>
+<h3 id="&#x8272;&#x6E29;-colortemperature"><span id="color_temperature">&#x8272;&#x6E29; color_temperature</span></h3>
+<ul>
+<li>actions &#x63A5;&#x53D7;&#x503C; [ &quot;up&quot;, &quot;down&quot;, &quot;max&quot;, &quot;min&quot;, &quot;num&quot; ]<ul>
+<li>&quot;up&quot;: &#x8C03;&#x9AD8;</li>
+<li>&quot;down&quot;: &#x8C03;&#x4F4E;</li>
+<li>&quot;max&quot;: &#x8C03;&#x5230;&#x6700;&#x5927;</li>
+<li>&quot;min&quot;: &#x8C03;&#x5230;&#x6700;&#x5C0F;</li>
+<li>&quot;num&quot;: &#x8C03;&#x5230;&#x6307;&#x5B9A;&#x6570;&#x503C;</li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;color_temperature&quot;</span>: [<span class="hljs-string">&quot;up&quot;</span>, <span class="hljs-string">&quot;down&quot;</span>] }
+</code></pre>
+<ul>
+<li>state &#x503C;<ul>
+<li>{number}</li>
+<li>0 &#x5230; 100 &#x4E4B;&#x95F4;&#x5341;&#x8FDB;&#x5236;&#x6570;&#x503C;</li>
+<li>&#x5982;&#x679C;&#x4E0D;&#x80FD;&#x660E;&#x786E;&#x83B7;&#x53D6;&#x5230;&#x5177;&#x4F53;&#x6570;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A; null</li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-JSON">{ <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-string">&quot;color_temperature&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;num&quot;</span>, <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">26</span>}
+</code></pre>
 <h3 id="ping"><span id="ping">ping</span></h3>
 <ul>
 <li>actions &#x63A5;&#x53D7;&#x503C; [ &quot;trigger&quot; ]<ul>
@@ -791,7 +817,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设备能力与状态","level":"1.3.3","depth":2,"next":{"title":"调试工具","level":"1.4","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"命令行接口校验工具","level":"1.4.1","depth":2,"path":"tools/rhome.md","ref":"tools/rhome.md","articles":[]},{"title":"开发者驱动","level":"1.4.2","depth":2,"path":"tools/developer-driver.md","ref":"tools/developer-driver.md","articles":[]},{"title":"如何测试 OAuth|OAuth2.0 接口","level":"1.4.3","depth":2,"path":"tools/oauth-test.md","ref":"tools/oauth-test.md","articles":[]}]},"previous":{"title":"设备类型","level":"1.3.2","depth":2,"path":"device/type.md","ref":"device/type.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"device/actions-and-state.md","mtime":"2017-12-04T03:40:11.664Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-21T06:31:22.250Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设备能力与状态","level":"1.3.3","depth":2,"next":{"title":"调试工具","level":"1.4","depth":1,"path":"tools/README.md","ref":"tools/README.md","articles":[{"title":"命令行接口校验工具","level":"1.4.1","depth":2,"path":"tools/rhome.md","ref":"tools/rhome.md","articles":[]},{"title":"开发者驱动","level":"1.4.2","depth":2,"path":"tools/developer-driver.md","ref":"tools/developer-driver.md","articles":[]},{"title":"如何测试 OAuth|OAuth2.0 接口","level":"1.4.3","depth":2,"path":"tools/oauth-test.md","ref":"tools/oauth-test.md","articles":[]}]},"previous":{"title":"设备类型","level":"1.3.2","depth":2,"path":"device/type.md","ref":"device/type.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sidebar":{"Rokid":"https://www.rokid.com"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":null,"all":null}},"gitbook":"*"},"file":{"path":"device/actions-and-state.md","mtime":"2017-12-25T10:12:10.150Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-25T10:13:31.160Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

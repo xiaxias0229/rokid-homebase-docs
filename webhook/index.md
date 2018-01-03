@@ -1,5 +1,7 @@
 # Webhook
 
+Webhook 是一个通过 HTTP 调用控制用户授权设备的服务，当某一个事件发生时，通过发起一个 HTTP Post 请求并使用期望的参数至指定的 Webhook URL 接口即可直接控制家庭里的设备。
+
 ## 触发 Webhook
 
 创建一个 HTTP POST 请求至
